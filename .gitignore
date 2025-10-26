@@ -210,3 +210,28 @@ __marimo__/
 # Dataset
 # -------------------------------
 CIC-IDS-2017/
+
+# -------------------------------
+# Project Results and Artifacts
+# -------------------------------
+# Trained models
+models/
+*.pkl
+*.pth
+*.h5
+
+# Results and outputs
+results/
+runs/
+*.csv
+*.png
+*.tex
+
+# Combined/processed data
+data/
+combined_*.csv
+*.pkl
+
+# Logs
+logs/
+*.log
