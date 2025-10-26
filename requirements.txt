@@ -1,0 +1,18 @@
+# Core Data Science
+numpy
+pandas
+
+# Machine Learning
+scikit-learn
+torch
+
+# Visualization
+matplotlib
+seaborn
+
+# Utilities
+joblib
+pyyaml
+
+# Statistical Analysis
+scipy
