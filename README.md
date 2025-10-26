@@ -34,3 +34,23 @@ venv\Scripts\activate  # Windows
 ```bash
 pip install -r requirements.txt
 ```
+
+---
+
+## Usage
+
+### Run Complete Pipeline (Linux/Mac)
+```bash
+chmod +x run_all.sh
+./run_all.sh
+```
+
+### Run Individual Scripts
+```bash
+python3 00_sanity_check.py
+python3 01_preprocessing.py
+python3 02_train_evaluate.py
+python3 03_ids_integration.py
+python3 04_adversarial.py
+python3 05_analysis.py
+```
