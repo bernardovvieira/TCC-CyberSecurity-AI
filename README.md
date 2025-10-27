@@ -35,6 +35,13 @@ venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 ```
 
+### 5. Install Suricata - Ubuntu/Debian (Optional - for IDS integration)
+```bash
+sudo apt update
+sudo apt install suricata
+sudo suricata-update
+```
+
 ---
 
 ## Usage
