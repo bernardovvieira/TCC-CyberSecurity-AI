@@ -5,40 +5,50 @@
 
 ---
 
+## Requirements
+
+- Ubuntu/Debian Linux
+- Python 3.8+
+- 60GB+ free disk space (dataset)
+
+---
+
 ## Installation
 
-### 1. Download Dataset
+### 1. System Dependencies (Ubuntu/Debian)
+
+```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-venv
+```
+
+### 2. Download Dataset
+
 Download CIC-IDS-2017 from: https://www.unb.ca/cic/datasets/ids-2017.html
 
-Or use wget (Linux/Mac):
+Or use wget:
 ```bash
 wget -r -np -nH --cut-dirs=3 -R "index.html*" -c -nc \
-    http://205.174.165.80/CICDataset/CIC-IDS-2017/Dataset/       
+    http://205.174.165.80/CICDataset/CIC-IDS-2017/Dataset/
 ```
 
-### 2. Create Virtual Environment
+### 3. Create and Activate Virtual Environment
+
 ```bash
 python3 -m venv venv
+source venv/bin/activate
 ```
 
-### 3. Activate Virtual Environment
-```bash
-source venv/bin/activate  # Linux/Mac
-```
-or
-```bash
-venv\Scripts\activate  # Windows
-```
+### 4. Install Python Dependencies
 
-### 4. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Install Suricata - Ubuntu/Debian (Optional - for IDS integration)
+### 5. Install IDS Tools (Optional)
+
 ```bash
-sudo apt update
-sudo apt install suricata
+sudo apt install suricata tcpreplay tshark
 sudo suricata-update
 ```
 
@@ -46,18 +56,29 @@ sudo suricata-update
 
 ## Usage
 
-### Run Complete Pipeline (Linux/Mac)
+### Run Complete Pipeline
+
 ```bash
 chmod +x run_all.sh
 ./run_all.sh
 ```
 
 ### Run Individual Scripts
+
 ```bash
-python3 00_sanity_check.py
-python3 01_preprocessing.py
-python3 02_train_evaluate.py
-python3 03_ids_integration.py
-python3 04_adversarial.py
-python3 05_analysis.py
+python3 00_sanity_check.py       # Validate environment
+python3 01_preprocessing.py      # Process dataset
+python3 02_train_evaluate.py     # Train models
+python3 03_ids_integration.py    # IDS integration (requires Suricata)
+python3 04_adversarial.py        # Adversarial attacks
+python3 05_analysis.py           # Complementary analysis
 ```
+
+---
+
+## Output
+
+Results will be generated in:
+- `models/` - Trained models (.pkl files)
+- `results/` - Metrics, plots, and reports
+- `runs/` - IDS execution logs
