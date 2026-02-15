@@ -3,6 +3,8 @@
 **Author:** Bernardo Vivian Vieira  
 **Email:** 179835@upf.br
 
+Implementation and comparative analysis of ML models (Decision Tree, Random Forest, MLP) integrated with Suricata IDS using the CIC-IDS-2017 dataset. Includes preprocessing, training, IDS integration, adversarial attacks (FGSM, PGD, C&W L2), and complementary analysis (ROC/PR, McNemar, feature importance).
+
 ---
 
 ## Requirements
@@ -45,7 +47,11 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 5. Install IDS Tools (Optional)
+### 5. Configuration
+
+The project uses `config.yaml` in the repository root for paths, model hyperparameters, and Suricata settings. Adjust `paths.data_dir`, `paths.csv_dir`, and `paths.pcap_dir` if your CIC-IDS-2017 layout differs (e.g. after extracting the dataset).
+
+### 6. Install IDS Tools (Optional)
 
 ```bash
 sudo apt install suricata tcpreplay tshark
@@ -82,3 +88,25 @@ Results will be generated in:
 - `models/` - Trained models (.pkl files)
 - `results/` - Metrics, plots, and reports
 - `runs/` - IDS execution logs
+
+---
+
+## Citation
+
+If you use this work in academic or applied research, please cite:
+
+```bibtex
+@software{vieira2025_ai_ids,
+  author = {Vieira, Bernardo Vivian},
+  title = {TCC-CyberSecurity-AI: Implementation and comparative analysis of ML models integrated into Suricata IDS using CIC-IDS-2017},
+  year = {2025},
+  url = {https://github.com/bernardovvieira/TCC-CyberSecurity-AI},
+  note = {Undergraduate thesis (TCC)}
+}
+```
+
+---
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
